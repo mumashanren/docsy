@@ -24,13 +24,40 @@ Useful links:
 
 For the full list of changes, see the [0.x.y] release notes.
 
-**Breaking changes**:
+**Potential breaking change**:
+
+- Removes shortcode `figure`, hugo's built-in shortcode `figure` can/will be
+  used instead
 
 **New**:
 
+- **[Breadcrumb navigation]** support has been enhanced and adjusted:
+  - You can now disable breadcrumbs for an entire project, or individual pages
+    or sections by setting `ui.breadcrumb_disable` to true. For details, see
+    [Breadcrumb navigation].
+  - **Blog** pages now also have breadcrumbs by default ([#1788]).
+  - Index-page single-element breadcrumb lists are hidden by default ([#2160]).
+- Support for a [td-content-after-header.html] page-content render hook, which
+  can be [content type] specific ([#2192]).
+
 **Other changes**:
 
+- **Blog** section index page content and title used to be ignored, they are now
+  displayed ([#1787]). To recover the old behavior use the following style
+  override: `.td-section.td-blog .td-content { display: none; }`.
+- Adds a `comment` shortcode, as a drop-in replacement for the on removed from
+  Hugo.
+
 [0.x.y]: https://github.com/google/docsy/releases/latest?FIXME=v0.X.Y
+[#1787]: https://github.com/google/docsy/issues/1787
+[#1788]: https://github.com/google/docsy/issues/1788
+[#2160]: https://github.com/google/docsy/pull/2160
+[#2192]: https://github.com/google/docsy/pull/2192
+[Breadcrumb navigation]:
+  https://www.docsy.dev/docs/adding-content/navigation/#breadcrumb-navigation
+[content type]: https://gohugo.io/quick-reference/glossary/#content-type
+[td-content-after-header.html]:
+  https://github.com/google/docsy/blob/main/layouts/_default/td-content-after-header.html
 
 ## 0.11.0
 
